@@ -1,0 +1,7 @@
+{
+  "environment": [
+    {
+      "images_url": "https://jsonplaceholder.typicode.com/photos"
+    }
+  ]
+}
