@@ -1,46 +1,23 @@
-// mobile devices
-@mixin mobile {
-    @media (max-width: #{$screen-sm-min}) {
-        @content;
+@import './colorpalette';
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+    // For Google Chrome
+    &::-webkit-scrollbar {
+      width:  $size;
+      height: $size;
     }
-  }
   
-  // Small devices
-  @mixin sm {
-      @media (min-width: #{$screen-sm-min}) {
-          @content;
-      }
-   }
-  
-   // Medium devices
-   @mixin md {
-      @media (min-width: #{$screen-md-min}) {
-          @content;
-      }
-   }
-  
-   // Large devices
-   @mixin lg {
-      @media (min-width: #{$screen-lg-min}) {
-          @content;
-      }
-   }
-  
-   // Extra large devices
-   @mixin xl {
-      @media (min-width: #{$screen-xl-min}) {
-          @content;
-      }
-   }
-  
-  @mixin mdDown {
-    @media (max-width: #{$screen-md-min}) {
-      @content;
+    &::-webkit-scrollbar-thumb {
+      background: $foreground-color;
     }
-  }
   
-  @mixin lgDown {
-    @media (max-width: #{$screen-lg-min}) {
-      @content;
+    &::-webkit-scrollbar-track {
+      background: $background-color;
+    }
+  
+    // For Internet Explorer
+    & {
+      scrollbar-face-color: $foreground-color;
+      scrollbar-track-color: $background-color;
     }
   }
