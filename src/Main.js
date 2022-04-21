@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  NavLink
 } from 'react-router-dom';
 import GalleryContainer from './containers/GalleryContainer'
 import ImageContainer from './components/ImageContainer'

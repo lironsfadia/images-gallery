@@ -12,6 +12,10 @@ html,body {
   justify-content: center;
   align-items: center;
   height: 800px;
+
+  .MuiCardActions-root {
+    margin: 10px 0px 0px -15px;
+  }
 }
 
 .gallery-container {
@@ -52,6 +56,10 @@ html,body {
     @include scrollbarOnHover();
   }
 
+  #img-elm {
+    cursor: pointer;
+  }
+  
   #img-elm:hover + #title-bar-elm {
     opacity: 1.0;
   }

@@ -14,7 +14,6 @@ function createAuthorizationHeaders() {
   
   export function DataProvider({ calculator : Calculator, layout: Layout, url }){
     const [data, setData] = useState(null);
-    const refreshDataInterval = 2000000;
 
     useEffect(() =>{
         if(url !== '') {
@@ -26,14 +25,7 @@ function createAuthorizationHeaders() {
                   console.log(error)
               })
             }
-
-            const timer = setInterval(() => {
-              updateData()
-            }, refreshDataInterval);
-
             updateData();
-
-            return ()=> clearInterval(timer) 
         }
     },[url])
 
