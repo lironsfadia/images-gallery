@@ -41,14 +41,16 @@ var MenuItemUnstyled = /*#__PURE__*/React.forwardRef(function MenuItemUnstyled(p
       components = _props$components === void 0 ? {} : _props$components,
       _props$componentsProp = props.componentsProps,
       componentsProps = _props$componentsProp === void 0 ? {} : _props$componentsProp,
-      other = _objectWithoutProperties(props, ["children", "className", "disabled", "component", "components", "componentsProps"]);
+      label = props.label,
+      other = _objectWithoutProperties(props, ["children", "className", "disabled", "component", "components", "componentsProps", "label"]);
 
   var Root = (_ref = component != null ? component : components.Root) != null ? _ref : 'li';
 
   var _useMenuItem = useMenuItem({
     component: Root,
     disabled: disabled,
-    ref: ref
+    ref: ref,
+    label: label
   }),
       getRootProps = _useMenuItem.getRootProps,
       itemState = _useMenuItem.itemState,
@@ -111,6 +113,12 @@ process.env.NODE_ENV !== "production" ? MenuItemUnstyled.propTypes
    * If `true`, the menu item will be disabled.
    * @default false
    */
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+
+  /**
+   * A text representation of the menu item's content.
+   * Used for keyboard text navigation matching.
+   */
+  label: PropTypes.string
 } : void 0;
 export default MenuItemUnstyled;

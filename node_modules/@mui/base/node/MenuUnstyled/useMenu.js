@@ -67,6 +67,11 @@ function useMenu(parameters) {
     setHighlightedValue: setListboxHighlight
   } = (0, _ListboxUnstyled.useListbox)({
     options: Object.keys(menuItems),
+    optionStringifier: id => {
+      var _menuItems$id$ref$cur;
+
+      return menuItems[id].label || ((_menuItems$id$ref$cur = menuItems[id].ref.current) == null ? void 0 : _menuItems$id$ref$cur.innerText);
+    },
     isOptionDisabled: id => {
       var _menuItems$id;
 

@@ -29,7 +29,7 @@ var _appendOwnerState = _interopRequireDefault(require("../utils/appendOwnerStat
 
 var _jsxRuntime = require("react/jsx-runtime");
 
-const _excluded = ["children", "className", "component", "components", "componentsProps", "disabled", "value"];
+const _excluded = ["children", "className", "component", "components", "componentsProps", "disabled", "value", "label"];
 
 function useUtilityClasses(ownerState) {
   const {
@@ -57,7 +57,8 @@ const OptionUnstyled = /*#__PURE__*/_react.default.forwardRef(function OptionUns
     components = {},
     componentsProps = {},
     disabled,
-    value
+    value,
+    label
   } = props,
         other = (0, _objectWithoutPropertiesLoose2.default)(props, _excluded);
 
@@ -70,7 +71,7 @@ const OptionUnstyled = /*#__PURE__*/_react.default.forwardRef(function OptionUns
   const Root = component || components.Root || 'li';
   const selectOption = {
     value,
-    label: children,
+    label: label || children,
     disabled
   };
   const optionState = selectContext.getOptionState(selectOption);
@@ -160,6 +161,12 @@ process.env.NODE_ENV !== "production" ? OptionUnstyled.propTypes
   disabled: _propTypes.default.bool,
 
   /**
+   * A text representation of the option's content.
+   * Used for keyboard text navigation matching.
+   */
+  label: _propTypes.default.string,
+
+  /**
    * The value of the option.
    */
   value: _propTypes.default.any.isRequired
@@ -169,11 +176,11 @@ process.env.NODE_ENV !== "production" ? OptionUnstyled.propTypes
  *
  * Demos:
  *
- * - [Selects](https://mui.com/components/selects/)
+ * - [Select](https://mui.com/base/react-select/)
  *
  * API:
  *
- * - [OptionUnstyled API](https://mui.com/api/option-unstyled/)
+ * - [OptionUnstyled API](https://mui.com/base/api/option-unstyled/)
  */
 
 var _default = /*#__PURE__*/_react.default.memo(OptionUnstyled);

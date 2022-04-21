@@ -36,7 +36,8 @@ var OptionUnstyled = /*#__PURE__*/React.forwardRef(function OptionUnstyled(props
       componentsProps = _props$componentsProp === void 0 ? {} : _props$componentsProp,
       disabled = props.disabled,
       value = props.value,
-      other = _objectWithoutProperties(props, ["children", "className", "component", "components", "componentsProps", "disabled", "value"]);
+      label = props.label,
+      other = _objectWithoutProperties(props, ["children", "className", "component", "components", "componentsProps", "disabled", "value", "label"]);
 
   var selectContext = React.useContext(SelectUnstyledContext);
 
@@ -47,7 +48,7 @@ var OptionUnstyled = /*#__PURE__*/React.forwardRef(function OptionUnstyled(props
   var Root = component || components.Root || 'li';
   var selectOption = {
     value: value,
-    label: children,
+    label: label || children,
     disabled: disabled
   };
   var optionState = selectContext.getOptionState(selectOption);
@@ -134,6 +135,12 @@ process.env.NODE_ENV !== "production" ? OptionUnstyled.propTypes
   disabled: PropTypes.bool,
 
   /**
+   * A text representation of the option's content.
+   * Used for keyboard text navigation matching.
+   */
+  label: PropTypes.string,
+
+  /**
    * The value of the option.
    */
   value: PropTypes.any.isRequired
@@ -143,11 +150,11 @@ process.env.NODE_ENV !== "production" ? OptionUnstyled.propTypes
  *
  * Demos:
  *
- * - [Selects](https://mui.com/components/selects/)
+ * - [Select](https://mui.com/base/react-select/)
  *
  * API:
  *
- * - [OptionUnstyled API](https://mui.com/api/option-unstyled/)
+ * - [OptionUnstyled API](https://mui.com/base/api/option-unstyled/)
  */
 
 export default /*#__PURE__*/React.memo(OptionUnstyled);

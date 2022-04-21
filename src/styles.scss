@@ -8,10 +8,16 @@ html,body {
   @include scrollbars(10px, pink, red);
 }
 
+.image-details-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 800px;
+}
+
 .gallery-container {
   width: 100%;
   height: 85vh;
-  @include scrollbars(10px, pink, red);
 
   .gallery-layout {
     width: 100%;
@@ -19,8 +25,36 @@ html,body {
     display: flex;
     justify-content: center;
     align-items: center;
-    @include scrollbars(10px, pink, red);
-    font-family: $gallery-font-regular;
+  }
+
+  .gallery-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .MuiTypography-root {
+      font-size: $gallery-font-size !important;
+      font-family: $gallery-font-bold !important;
+    }
+    
+    .MuiAutocomplete-root {
+      width: 300px;
+    }
+    
+    .MuiInputLabel-root {
+      font-family: $gallery-font-regular !important;
+      font-size: $gallery-search-box-font-size !important;
+    }
+
+    .search-box-item {
+      margin: 10px 10px 0 0;
+    }
+  
+    .headline-item {
+      margin: 10px 15px 10px;
+      flex: 2 1 auto;
+    }
   }
 
   #img-elm:hover + #title-bar-elm {
@@ -45,12 +79,6 @@ html,body {
     &md {
       top: 130px !important;
     }
-  }
-
-  .search-box-container {
-    margin: 10px 0 0 10px;
-    float: left;
-    font-family: $gallery-font-regular;
   }
 }
 

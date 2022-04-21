@@ -1,6 +1,6 @@
 import _extends from "@babel/runtime/helpers/esm/extends";
 import _objectWithoutPropertiesLoose from "@babel/runtime/helpers/esm/objectWithoutPropertiesLoose";
-const _excluded = ["children", "className", "component", "components", "componentsProps", "disabled", "value"];
+const _excluded = ["children", "className", "component", "components", "componentsProps", "disabled", "value", "label"];
 import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
@@ -37,7 +37,8 @@ const OptionUnstyled = /*#__PURE__*/React.forwardRef(function OptionUnstyled(pro
     components = {},
     componentsProps = {},
     disabled,
-    value
+    value,
+    label
   } = props,
         other = _objectWithoutPropertiesLoose(props, _excluded);
 
@@ -50,7 +51,7 @@ const OptionUnstyled = /*#__PURE__*/React.forwardRef(function OptionUnstyled(pro
   const Root = component || components.Root || 'li';
   const selectOption = {
     value,
-    label: children,
+    label: label || children,
     disabled
   };
   const optionState = selectContext.getOptionState(selectOption);
@@ -137,6 +138,12 @@ process.env.NODE_ENV !== "production" ? OptionUnstyled.propTypes
   disabled: PropTypes.bool,
 
   /**
+   * A text representation of the option's content.
+   * Used for keyboard text navigation matching.
+   */
+  label: PropTypes.string,
+
+  /**
    * The value of the option.
    */
   value: PropTypes.any.isRequired
@@ -146,11 +153,11 @@ process.env.NODE_ENV !== "production" ? OptionUnstyled.propTypes
  *
  * Demos:
  *
- * - [Selects](https://mui.com/components/selects/)
+ * - [Select](https://mui.com/base/react-select/)
  *
  * API:
  *
- * - [OptionUnstyled API](https://mui.com/api/option-unstyled/)
+ * - [OptionUnstyled API](https://mui.com/base/api/option-unstyled/)
  */
 
 export default /*#__PURE__*/React.memo(OptionUnstyled);

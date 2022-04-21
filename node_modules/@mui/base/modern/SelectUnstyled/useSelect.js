@@ -4,6 +4,24 @@ import { unstable_useControlled as useControlled, unstable_useForkRef as useFork
 import { useButton } from '../ButtonUnstyled';
 import { useListbox, defaultListboxReducer, ActionTypes } from '../ListboxUnstyled';
 
+const defaultOptionStringifier = option => {
+  const {
+    label,
+    value
+  } = option;
+
+  if (typeof label === 'string') {
+    return label;
+  }
+
+  if (typeof value === 'string') {
+    return value;
+  } // Fall back string representation
+
+
+  return String(option);
+};
+
 function useSelect(props) {
   const {
     buttonComponent,
@@ -17,6 +35,7 @@ function useSelect(props) {
     onOpenChange,
     open = false,
     options,
+    optionStringifier = defaultOptionStringifier,
     value: valueProp
   } = props;
   const buttonRef = React.useRef(null);
@@ -169,6 +188,7 @@ function useSelect(props) {
         onChange?.(newOptions.map(o => o.value));
       },
       options,
+      optionStringifier,
       value: selectedOption
     };
   } else {
@@ -183,6 +203,7 @@ function useSelect(props) {
         onChange?.(option?.value ?? null);
       },
       options,
+      optionStringifier,
       stateReducer: listboxReducer,
       value: selectedOption
     };

@@ -27,7 +27,7 @@ var _composeClasses = _interopRequireDefault(require("../composeClasses"));
 
 var _jsxRuntime = require("react/jsx-runtime");
 
-const _excluded = ["children", "className", "disabled", "component", "components", "componentsProps"];
+const _excluded = ["children", "className", "disabled", "component", "components", "componentsProps", "label"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -64,7 +64,8 @@ const MenuItemUnstyled = /*#__PURE__*/React.forwardRef(function MenuItemUnstyled
     disabled = false,
     component,
     components = {},
-    componentsProps = {}
+    componentsProps = {},
+    label
   } = props,
         other = (0, _objectWithoutPropertiesLoose2.default)(props, _excluded);
   const Root = (_ref = component != null ? component : components.Root) != null ? _ref : 'li';
@@ -75,7 +76,8 @@ const MenuItemUnstyled = /*#__PURE__*/React.forwardRef(function MenuItemUnstyled
   } = (0, _useMenuItem.default)({
     component: Root,
     disabled,
-    ref
+    ref,
+    label
   });
 
   if (itemState == null) {
@@ -134,7 +136,13 @@ process.env.NODE_ENV !== "production" ? MenuItemUnstyled.propTypes
    * If `true`, the menu item will be disabled.
    * @default false
    */
-  disabled: _propTypes.default.bool
+  disabled: _propTypes.default.bool,
+
+  /**
+   * A text representation of the menu item's content.
+   * Used for keyboard text navigation matching.
+   */
+  label: _propTypes.default.string
 } : void 0;
 var _default = MenuItemUnstyled;
 exports.default = _default;

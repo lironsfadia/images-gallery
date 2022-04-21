@@ -9,6 +9,7 @@ var ActionTypes; // split declaration and export due to https://github.com/codes
   ActionTypes["optionsChange"] = "optionsChange";
   ActionTypes["setValue"] = "setValue";
   ActionTypes["setHighlight"] = "setHighlight";
+  ActionTypes["textNavigation"] = "textNagivation";
 })(ActionTypes || (ActionTypes = {}));
 
 export { ActionTypes };

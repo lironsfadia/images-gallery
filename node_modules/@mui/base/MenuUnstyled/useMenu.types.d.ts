@@ -4,6 +4,7 @@ export interface MenuItemMetadata {
     id: string;
     disabled: boolean;
     ref: React.RefObject<HTMLElement>;
+    label?: string;
 }
 export interface MenuItemState {
     disabled: boolean;

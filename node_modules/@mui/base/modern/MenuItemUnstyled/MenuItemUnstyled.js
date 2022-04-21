@@ -1,6 +1,6 @@
 import _extends from "@babel/runtime/helpers/esm/extends";
 import _objectWithoutPropertiesLoose from "@babel/runtime/helpers/esm/objectWithoutPropertiesLoose";
-const _excluded = ["children", "className", "disabled", "component", "components", "componentsProps"];
+const _excluded = ["children", "className", "disabled", "component", "components", "componentsProps", "label"];
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
@@ -39,7 +39,8 @@ const MenuItemUnstyled = /*#__PURE__*/React.forwardRef(function MenuItemUnstyled
     disabled = false,
     component,
     components = {},
-    componentsProps = {}
+    componentsProps = {},
+    label
   } = props,
         other = _objectWithoutPropertiesLoose(props, _excluded);
 
@@ -51,7 +52,8 @@ const MenuItemUnstyled = /*#__PURE__*/React.forwardRef(function MenuItemUnstyled
   } = useMenuItem({
     component: Root,
     disabled,
-    ref
+    ref,
+    label
   });
 
   if (itemState == null) {
@@ -111,6 +113,12 @@ process.env.NODE_ENV !== "production" ? MenuItemUnstyled.propTypes
    * If `true`, the menu item will be disabled.
    * @default false
    */
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+
+  /**
+   * A text representation of the menu item's content.
+   * Used for keyboard text navigation matching.
+   */
+  label: PropTypes.string
 } : void 0;
 export default MenuItemUnstyled;

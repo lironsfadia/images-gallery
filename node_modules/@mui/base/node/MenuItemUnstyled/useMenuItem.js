@@ -25,7 +25,8 @@ function useMenuItem(props) {
   const {
     component,
     disabled = false,
-    ref
+    ref,
+    label
   } = props;
   const id = (0, _utils.unstable_useId)();
   const menuContext = React.useContext(_MenuUnstyled.MenuUnstyledContext);
@@ -49,17 +50,19 @@ function useMenuItem(props) {
     registerItem(id, {
       disabled,
       id,
-      ref: itemRef
+      ref: itemRef,
+      label
     });
     return () => unregisterItem(id);
-  }, [id, registerItem, unregisterItem, disabled, ref]);
+  }, [id, registerItem, unregisterItem, disabled, ref, label]);
   const {
     getRootProps: getButtonProps,
     focusVisible
   } = (0, _ButtonUnstyled.useButton)({
     component,
-    ref: handleRef,
-    disabled
+    disabled,
+    focusableWhenDisabled: true,
+    ref: handleRef
   }); // Ensure the menu item is focused when highlighted
 
   const [focusRequested, requestFocus] = React.useState(false);
@@ -74,7 +77,8 @@ function useMenuItem(props) {
   });
   React.useDebugValue({
     id,
-    disabled
+    disabled,
+    label
   });
   const itemState = menuContext.getItemState(id != null ? id : '');
   const {

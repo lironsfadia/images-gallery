@@ -17,4 +17,5 @@ exports.ActionTypes = ActionTypes;
   ActionTypes["optionsChange"] = "optionsChange";
   ActionTypes["setValue"] = "setValue";
   ActionTypes["setHighlight"] = "setHighlight";
+  ActionTypes["textNavigation"] = "textNagivation";
 })(ActionTypes || (exports.ActionTypes = ActionTypes = {}));
