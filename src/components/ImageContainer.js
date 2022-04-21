@@ -1,18 +1,27 @@
-import React, { useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import {useLocation} from 'react-router-dom';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useWidth } from '../customHooks/useWidth';
 import '../styles.scss';
 
+const MAX_IMAGE_RESOLUTION = 1200;
+
 export function ImageContainer() {
-const location = useLocation();
-const { width: windowWidth } = useWidth();
+  const [largeImageUrl, setLargeImageUrl] = useState('');
+  const location = useLocation();
+  const { width: windowWidth } = useWidth();
+
+  useEffect(() => {
+    var image = location.state.url;
+    var imageArr = image.split('/');
+    imageArr[3] = MAX_IMAGE_RESOLUTION;
+    image = imageArr.join('/');
+    setLargeImageUrl(image);
+  }, [])
   
   return (
     <div className="image-details-card">
@@ -20,7 +29,7 @@ const { width: windowWidth } = useWidth();
         <CardMedia
           component="img"
           height="300"
-          image={location.state.url}
+          image={largeImageUrl}
           alt={location.state.title}
         />
         <CardContent sx={{ width: windowWidth, height: 450 }}>
@@ -28,7 +37,7 @@ const { width: windowWidth } = useWidth();
             {location.state.title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {location.state.url}
+            The original URL is {location.state.url}
           </Typography>
         </CardContent>
       </Card>
