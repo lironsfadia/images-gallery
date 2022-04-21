@@ -21,3 +21,29 @@
       scrollbar-track-color: $background-color;
     }
   }
+
+  @mixin scrollbarOnHover($scrollSize: 5px) {
+    height: 100%;
+  
+    @media (hover: hover) {
+      @include scrollbars($scrollSize, slategray);
+      overflow-y: hidden;
+    }
+    @media (hover: none) {
+      @include scrollbars($scrollSize, $transparent);
+      @include overflowYOverlay;
+    }
+  
+    &:hover {
+      @include overflowYOverlay;
+    }
+  }
+  
+  @mixin overflowYOverlay {
+    @supports (overflow-y: overlay) {
+      overflow-y: overlay;
+    }
+    @supports not (overflow-y: overlay) {
+      overflow-y: scroll;
+    }
+  }

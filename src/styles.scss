@@ -5,7 +5,6 @@ html,body {
   background-color: #f1f4f8;
   padding: 20px;
   margin: 0;
-  @include scrollbars(10px, pink, red);
 }
 
 .image-details-card {
@@ -18,14 +17,6 @@ html,body {
 .gallery-container {
   width: 100%;
   height: 85vh;
-
-  .gallery-layout {
-    width: 100%;
-    height: 85vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 
   .gallery-menu {
     display: flex;
@@ -55,6 +46,10 @@ html,body {
       margin: 10px 15px 10px;
       flex: 2 1 auto;
     }
+  }
+
+  .MuiImageList-root {
+    @include scrollbarOnHover();
   }
 
   #img-elm:hover + #title-bar-elm {
