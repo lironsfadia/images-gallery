@@ -13,7 +13,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 
 const availableSizes = [150, 450, 600];
 
-function TitlebarImageList({ imagesData, galleryAmount }) {
+function TitlebarImageList({ imagesData }) {
   const [currentImagesData, setCurrentImagesData] = useState(null);
   const [imageSearchResults, setImageSearchResults] = useState(null);
   const { width: windowWidth } = useWidth();
@@ -105,13 +105,8 @@ function TitlebarImageList({ imagesData, galleryAmount }) {
   );
 }
 
-TitlebarImageList.defaultProps = {
-  galleryAmount: 100
-}
-
 TitlebarImageList.propTypes = {
   imagesData: PropTypes.array,
-  galleryAmount: PropTypes.number,
 };
 
 export default TitlebarImageList;

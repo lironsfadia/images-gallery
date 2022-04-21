@@ -12,15 +12,14 @@ function createAuthorizationHeaders() {
     };
   }
   
-  export function DataProvider({ calculator : Calculator, layout: Layout, url }){
+  export function DataProvider({ calculator : Calculator, layout: Layout, url, dataAmount }){
     const [data, setData] = useState(null);
 
     useEffect(() =>{
         if(url !== '') {
           const updateData = () => {
               axios.get(url, createAuthorizationHeaders()).then(response => {
-                  console.log("SUCCESS", response)
-                  setData(response.data)
+                  setData(response.data.slice(0, dataAmount))
               }).catch(error => {
                   console.log(error)
               })
@@ -38,9 +37,14 @@ function createAuthorizationHeaders() {
     )
 }
 
+DataProvider.defaultProps = {
+  dataAmount: 100
+}
+
 DataProvider.propTypes = {
     calculator: PropTypes.func.isRequired,
     url: PropTypes.string.isRequired,
+    dataAmount: PropTypes.number.isRequired,
 };
 
 export default DataProvider;
