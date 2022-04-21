@@ -11,7 +11,7 @@ import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import Autocomplete from '@mui/material/Autocomplete';
 
-const availableSizes = [150, 450, 600];
+const AVAILABLE_SIZES = [150, 450, 600];
 
 function TitlebarImageList({ imagesData }) {
   const [currentImagesData, setCurrentImagesData] = useState(null);
@@ -25,21 +25,21 @@ function TitlebarImageList({ imagesData }) {
   }
 
   useEffect(() => {
-    var data = imagesData.slice(0, galleryAmount);
+    var data = imagesData;
     data = data.map((element) => {
       var arr = element.url.split('/');
-      element.cols = Math.round(1 + Math.random());
+      element.cols = Math.round(1);
       element.rows = Math.round(1 + Math.random());
-      arr[3] = element.cols === 2 && element.rows === 2 ? availableSizes[2] :
-        element.cols === 2 || element.rows === 2 ? availableSizes[1] :
-          availableSizes[0];
+      arr[3] = element.cols === 2 && element.rows === 2 ? AVAILABLE_SIZES[2] :
+        element.cols === 2 || element.rows === 2 ? AVAILABLE_SIZES[1] :
+          AVAILABLE_SIZES[0];
       element.url = arr.join('/');
       return element;
     });
     setCurrentImagesData(data);
     setImageSearchResults(data);
 
-  }, [imagesData, galleryAmount])
+  }, [imagesData])
 
   return (
     <>

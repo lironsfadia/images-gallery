@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useWidth } from '../customHooks/useWidth';
 import PropTypes from 'prop-types';
 import {useLocation} from 'react-router-dom';
+
 import Card from '@mui/material/Card';
 import Button from '@mui/material/Button';
 import CardContent from '@mui/material/CardContent';
