@@ -16,12 +16,13 @@ import { useWindowSize } from '../customHooks/useWindowSize';
 const AVAILABLE_SIZES = [150, 450, 600];
 const MAX_SUPPORTED_MOBILE_WIDTH = 768;
 const GALLERY_HEIGHT = 1000;
-
+const GALLERY_WIDTH_GAP = 80;
 function TitlebarImageList({ imagesData }) {
   const [currentImagesData, setCurrentImagesData] = useState(null);
   const [imageSearchResults, setImageSearchResults] = useState(null);
-  const { width: windowWidth, height: windowHeight } = useWindowSize();
+  const { width: windowWidth } = useWindowSize();
   const navigate = useNavigate();
+  
   const imageQueryParams = '?w=248&fit=crop&auto=format';
   const thumbnailQueryParams = '?w=248&fit=crop&auto=format&dpr=2 2x';
 
@@ -86,7 +87,7 @@ function TitlebarImageList({ imagesData }) {
                 )}
               /></Stack>
           </div>
-          <ImageList sx={{ width: windowWidth, height: GALLERY_HEIGHT }}
+          <ImageList sx={{ width: windowWidth-GALLERY_WIDTH_GAP, maxHeight: GALLERY_HEIGHT }}
             cols={4}
             rowHeight={150}
             variant="quilted"

@@ -13,12 +13,18 @@ html,body {
   align-items: center;
 
   .MuiCardActions-root {
-    margin: 40px 0px 0px -15px;
-    @media (max-width: 768px) {
-      margin: 20px 0px 0px -15px;
+    margin: 90px 0px 0px -15px;
+    
+    @media (max-width: 1024px) {
+      margin:60px 0px 0px -15px;
     }
+
+    @media (max-width: 768px) {
+      margin: 40px 0px 0px -15px;
+    }
+
     @media (max-width: 425px) {
-      margin: 50px 0px 0px -15px;
+      margin: 70px 0px 0px -15px;
     }
   }
 }
@@ -38,7 +44,7 @@ html,body {
     }
 
     .search-box-item {
-      margin: 10px 10px 0 0;
+      margin: 10px 10px 0 10px;
     }
   
     .headline-item {
@@ -56,6 +62,9 @@ html,body {
     font-size: $gallery-button-font-size !important; 
     @media (max-width: 768px) {
       font-size: $gallery-button-font-size-s !important;
+    }
+    @media (max-width: 425px) {
+      font-size: $gallery-button-font-size-xs !important;
     }
   }
 

@@ -15,22 +15,24 @@ import { theme } from '../styleSetup/theme';
 import '../styles.scss';
 
 export function ImageContainer() {
-  const [largeImageUrl, setLargeImageUrl] = useState('');
   const { width: windowWidth, height: windowHeight } = useWindowSize();
+  const [largeImageUrl, setLargeImageUrl] = useState('');
   const location = useLocation();
   const navigate = useNavigate();
 
-  const MAX_IMAGE_RESOLUTION = 1200;
-  const CARD_HEIGHT_SPACE = windowWidth > 800 ? 400 : 300;
-  const IMAGE_HEIGHT_SPACE = windowWidth > 800 ? 200 : 100;
+  const MAX_IMAGE_RESOLUTION = 1800;
+  const MAX_IMAGE_RESOLUTION_MOBILE = 1200;
+  const MAX_SUPPORTED_MOBILE_WIDTH = 768;
+  const CARD_HEIGHT_SPACE = windowWidth > MAX_SUPPORTED_MOBILE_WIDTH ? 400 : 300;
+  const IMAGE_HEIGHT_SPACE = windowWidth > MAX_SUPPORTED_MOBILE_WIDTH ? 200 : 100;
 
   useEffect(() => {
     var image = location.state.url;
     var imageArr = image.split('/');
-    imageArr[3] = MAX_IMAGE_RESOLUTION;
+    imageArr[3] = windowWidth > MAX_SUPPORTED_MOBILE_WIDTH ? MAX_IMAGE_RESOLUTION : MAX_IMAGE_RESOLUTION_MOBILE;
     image = imageArr.join('/');
     setLargeImageUrl(image);
-  }, [location])
+  }, [location, windowWidth, windowHeight])
 
   return (
     <div className="image-details-card">

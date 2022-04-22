@@ -1,5 +1,6 @@
 import React, { useContext, useMemo } from 'react';
 import PropTypes from 'prop-types';
+
 import { getRequestContext } from '../contexts/Context'
 
 export function GalleryCalculator({ layout: Layout }) {
