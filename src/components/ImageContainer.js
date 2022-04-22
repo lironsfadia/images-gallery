@@ -39,7 +39,7 @@ export function ImageContainer() {
       <Card sx={{ width: windowWidth, height: windowHeight }}>
         <CardMedia
           component="img"
-          height={windowHeight - CARD_HEIGHT_SPACE}
+          height={windowHeight ? windowHeight - CARD_HEIGHT_SPACE : 900}
           image={largeImageUrl}
           alt={location.state.title}
         />

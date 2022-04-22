@@ -3,4 +3,4 @@
 2. Navigate to the app in "localhost:3000"
 3. In the first page you will see a gallery with 100 images in 3 different sizes, you can search image by title (NOTE search is case insensitive and triggered immediately).
 4. When you move hover an image, you will see its title.
-5. When you click on an image, an image details page will be shown. 
+5. When you click on an image, an image details page will be shown. Click on "Back" button in the page, and you will be back to the gallery page.
