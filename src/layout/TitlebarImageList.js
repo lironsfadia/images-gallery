@@ -107,6 +107,7 @@ function TitlebarImageList({ imagesData }) {
                     className={`title-bar-${item.rows === 2 ? 'md' : 's'}`}
                     title={item.title}
                     position={"top"}
+                    onClick={() => routeToImageDetails(item)}
                   />
                 </div>
               </ImageListItem>
