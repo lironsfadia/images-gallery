@@ -22,30 +22,32 @@ function TitlebarImageList({ imagesData }) {
   const [imageSearchResults, setImageSearchResults] = useState(null);
   const { width: windowWidth } = useWindowSize();
   const navigate = useNavigate();
-  
+
   const imageQueryParams = '?w=248&fit=crop&auto=format';
   const thumbnailQueryParams = '?w=248&fit=crop&auto=format&dpr=2 2x';
 
   const routeToImageDetails = (item) => {
     let path = `/details`;
+    sessionStorage.setItem("imagesData", JSON.stringify(currentImagesData));
     navigate(path, { state: { id: 1, url: item.url, title: item.title } });
   }
 
   useEffect(() => {
     var data = imagesData;
-    data = data.map((element) => {
-      var arr = element.url.split('/');
-      element.cols = 1;
-      element.rows = Math.round(1 + Math.random());
-      arr[3] = element.cols === 2 && element.rows === 2 ? AVAILABLE_SIZES[2] :
-        element.cols === 2 || element.rows === 2 ? AVAILABLE_SIZES[1] :
-          AVAILABLE_SIZES[0];
-      element.url = arr.join('/');
-      return element;
-    });
+    if (!sessionStorage.getItem("imagesData")) {
+      data = data.map((element) => {
+        var arr = element.url.split('/');
+        element.cols = 1;
+        element.rows = Math.round(1 + Math.random());
+        arr[3] = element.cols === 2 && element.rows === 2 ? AVAILABLE_SIZES[2] :
+          element.cols === 2 || element.rows === 2 ? AVAILABLE_SIZES[1] :
+            AVAILABLE_SIZES[0];
+        element.url = arr.join('/');
+        return element;
+      });
+    }
     setCurrentImagesData(data);
     setImageSearchResults(data);
-
   }, [imagesData])
 
   return (
@@ -87,7 +89,7 @@ function TitlebarImageList({ imagesData }) {
                 )}
               /></Stack>
           </div>
-          <ImageList sx={{ width: windowWidth-GALLERY_WIDTH_GAP, maxHeight: GALLERY_HEIGHT }}
+          <ImageList sx={{ width: windowWidth - GALLERY_WIDTH_GAP, maxHeight: GALLERY_HEIGHT }}
             cols={4}
             rowHeight={150}
             variant="quilted"

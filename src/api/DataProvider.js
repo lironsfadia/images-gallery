@@ -20,7 +20,7 @@ export function DataProvider({ calculator: Calculator,
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    if (url !== '') {
+    if (url !== '' && !sessionStorage.getItem("imagesData")) {
       const updateData = () => {
         axios.get(url, createAuthorizationHeaders()).then(response => {
           setData(response.data.slice(0, dataAmount))
