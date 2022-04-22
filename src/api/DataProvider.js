@@ -30,7 +30,7 @@ export function DataProvider({ calculator: Calculator,
       }
       updateData();
     }
-  }, [url])
+  }, [url, dataAmount])
 
   const { Provider } = getRequestContext;
 

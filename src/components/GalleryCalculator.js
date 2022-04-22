@@ -16,13 +16,9 @@ export function GalleryCalculator({ layout: Layout }) {
       <Layout className="gallery-layout" {...layoutProps} />
     ), [imagesData])
 
-    useEffect(() => {
-      if(data){
-        setImagesData(data);
-      } else {
-        setImagesData(JSON.parse(sessionStorage.getItem("imagesData")));
-      }
-    }, [data])
+  useEffect(() => {
+    setImagesData(data ? data : JSON.parse(sessionStorage.getItem("imagesData")));
+  }, [data])
 
   return (
     <>
