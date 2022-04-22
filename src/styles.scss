@@ -11,10 +11,15 @@ html,body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 800px;
 
   .MuiCardActions-root {
-    margin: 10px 0px 0px -15px;
+    margin: 40px 0px 0px -15px;
+    @media (max-width: 768px) {
+      margin: 20px 0px 0px -15px;
+    }
+    @media (max-width: 425px) {
+      margin: 50px 0px 0px -15px;
+    }
   }
 }
 
@@ -27,19 +32,9 @@ html,body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-
-    .MuiTypography-root {
-      font-size: $gallery-font-size !important;
-      font-family: $gallery-font-bold !important;
-    }
-    
-    .MuiAutocomplete-root {
-      width: 300px;
-    }
     
     .MuiInputLabel-root {
       font-family: $gallery-font-regular !important;
-      font-size: $gallery-search-box-font-size !important;
     }
 
     .search-box-item {
@@ -54,6 +49,14 @@ html,body {
 
   .MuiImageList-root {
     @include scrollbarOnHover();
+  }
+
+  .MuiButton-root {
+    font-family: $gallery-font-bold !important;
+    font-size: $gallery-button-font-size !important; 
+    @media (max-width: 768px) {
+      font-size: $gallery-button-font-size-s !important;
+    }
   }
 
   #img-elm {

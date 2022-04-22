@@ -5,36 +5,39 @@ import axios from 'axios';
 import { getRequestContext } from '../contexts/Context'
 
 function createAuthorizationHeaders() {
-    return {
-      headers: {
-        'Access-Control-Allow-Origin': '*'
-      },
-    };
-  }
-  
-  export function DataProvider({ calculator : Calculator, layout: Layout, url, dataAmount }){
-    const [data, setData] = useState(null);
+  return {
+    headers: {
+      'Access-Control-Allow-Origin': '*'
+    },
+  };
+}
 
-    useEffect(() =>{
-        if(url !== '') {
-          const updateData = () => {
-              axios.get(url, createAuthorizationHeaders()).then(response => {
-                  setData(response.data.slice(0, dataAmount))
-              }).catch(error => {
-                  console.log(error)
-              })
-            }
-            updateData();
-        }
-    },[url])
+export function DataProvider({ calculator: Calculator,
+  layout: Layout,
+  url,
+  dataAmount }) {
+  const [data, setData] = useState(null);
 
-    const { Provider } = getRequestContext;
+  useEffect(() => {
+    if (url !== '') {
+      const updateData = () => {
+        axios.get(url, createAuthorizationHeaders()).then(response => {
+          setData(response.data.slice(0, dataAmount))
+        }).catch(error => {
+          console.log(error)
+        })
+      }
+      updateData();
+    }
+  }, [url])
 
-    return(
-        <Provider value={data}>
-            <Calculator layout={Layout}/>
-        </Provider>
-    )
+  const { Provider } = getRequestContext;
+
+  return (
+    <Provider value={data}>
+      <Calculator layout={Layout} />
+    </Provider>
+  )
 }
 
 DataProvider.defaultProps = {
@@ -42,9 +45,9 @@ DataProvider.defaultProps = {
 }
 
 DataProvider.propTypes = {
-    calculator: PropTypes.func.isRequired,
-    url: PropTypes.string.isRequired,
-    dataAmount: PropTypes.number.isRequired,
+  calculator: PropTypes.func.isRequired,
+  url: PropTypes.string.isRequired,
+  dataAmount: PropTypes.number.isRequired,
 };
 
 export default DataProvider;
