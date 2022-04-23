@@ -74,8 +74,10 @@ html,body {
 
   #img-elm {
     cursor: pointer;
+    z-index: 1;
   }
   
+  #img-elm + #title-bar-elm:hover,
   #img-elm:hover + #title-bar-elm {
     opacity: 1.0;
   }
@@ -89,6 +91,7 @@ html,body {
     transition: all 500ms ease-in-out;
     padding-top: 100px;
     cursor: pointer;
+    z-index: -2;
   }
 
   .title-bar-{
