@@ -1,7 +1,8 @@
-@import './styleSetup/colorpalette';
-@import './styleSetup/mixins';
+@import "./styleSetup/colorpalette";
+@import "./styleSetup/mixins";
 
-html,body {
+html,
+body {
   background-color: #f1f4f8;
   padding: 20px;
   margin: 0;
@@ -14,7 +15,7 @@ html,body {
 
   .MuiCardActions-root {
     margin: 90px 0px 0px -15px;
-    
+
     @media (max-width: 1440px) {
       margin: 100px 0px 0px -15px;
     }
@@ -42,7 +43,7 @@ html,body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    
+
     .MuiInputLabel-root {
       font-family: $gallery-font-regular !important;
     }
@@ -50,7 +51,7 @@ html,body {
     .search-box-item {
       margin: 10px 10px 0 10px;
     }
-  
+
     .headline-item {
       margin: 10px 15px 10px;
       flex: 2 1 auto;
@@ -63,7 +64,7 @@ html,body {
 
   .MuiButton-root {
     font-family: $gallery-font-bold !important;
-    font-size: $gallery-button-font-size !important; 
+    font-size: $gallery-button-font-size !important;
     @media (max-width: 768px) {
       font-size: $gallery-button-font-size-s !important;
     }
@@ -76,14 +77,14 @@ html,body {
     cursor: pointer;
     z-index: 1;
   }
-  
+
   #img-elm + #title-bar-elm:hover,
   #img-elm:hover + #title-bar-elm {
-    opacity: 1.0;
+    opacity: 1;
   }
-    
+
   #title-bar-elm {
-    opacity: 0.0;
+    opacity: 0;
     -webkit-transition: all 500ms ease-in-out;
     -moz-transition: all 500ms ease-in-out;
     -ms-transition: all 500ms ease-in-out;
@@ -94,7 +95,7 @@ html,body {
     z-index: -2;
   }
 
-  .title-bar-{
+  .title-bar- {
     &s {
       top: 55px !important;
     }

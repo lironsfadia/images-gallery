@@ -57,7 +57,7 @@ function TitlebarImageList({ imagesData }) {
     <>
       {currentImagesData ? (
         <>
-          <div className="gallery-menu" style={windowWidth}>
+          <div className="gallery-menu" style={{ width: `${windowWidth}` }}>
             <div className="headline-item">
               <ThemeProvider theme={theme}>
                 <Typography variant="h3">Aqua Gallery</Typography>
