@@ -18,6 +18,5 @@ ReactDOM.render(<Main />, document.getElementById("root"));
       4. https://github.com/lironsfadia/aqua-
       gallery/blob/master/src/layout/TitlebarImageList.js#L57 - misuse of a property and
       redundant interpolation.
-      5. also there are two branches - main is the default branch which contains nothing,
-    while master is the branch which is not default and contains all of the codebase
+      5. 
  */
