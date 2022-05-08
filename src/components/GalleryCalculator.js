@@ -1,7 +1,7 @@
-import React, { useContext, useMemo, useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext, useMemo, useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
-import { getRequestContext } from '../contexts/Context'
+import { getRequestContext } from "../contexts/Context";
 
 export function GalleryCalculator({ layout: Layout }) {
   const data = useContext(getRequestContext);
@@ -12,19 +12,17 @@ export function GalleryCalculator({ layout: Layout }) {
   };
 
   const prepareDisplay = useMemo(
-    () => (
-      <Layout className="gallery-layout" {...layoutProps} />
-    ), [imagesData])
+    () => <Layout className="gallery-layout" {...layoutProps} />,
+    [imagesData]
+  );
 
   useEffect(() => {
-    setImagesData(data ? data : JSON.parse(sessionStorage.getItem("imagesData")));
-  }, [data])
+    setImagesData(
+      data ? data : JSON.parse(sessionStorage.getItem("imagesData"))
+    );
+  }, [data]);
 
-  return (
-    <>
-      {imagesData ? prepareDisplay : null}
-    </>
-  );
+  return <>{imagesData ? prepareDisplay : null}</>;
 }
 
 GalleryCalculator.propTypes = {
