@@ -1,0 +1,125 @@
+[33mcommit 8baeac940d477eb8aa23d126723e7c46cbfc6279[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Liron <liron.ssss@gmail.com>
+Date:   Fri May 6 21:33:43 2022 +0300
+
+    Fixed comments from aqua
+
+[33mcommit 714486963e0c8d6011bd6c6dd8a872c8a14a3533[m
+Author: Liron <liron.ssss@gmail.com>
+Date:   Fri May 6 11:57:15 2022 +0300
+
+    remove gitignore files
+
+[33mcommit f76401a202383b0df6b3321dc98eea2008f60da5[m
+Author: Liron <liron.ssss@gmail.com>
+Date:   Fri May 6 11:47:57 2022 +0300
+
+    added gitignore file
+
+[33mcommit 29de702bcc58db604b6a8fa931a0d442af75dd39[m
+Author: Liron <liron@trellis.ai>
+Date:   Sat Apr 23 18:36:24 2022 +0300
+
+    Made the overlay to be clickable and appears always when user within the image div
+
+[33mcommit 954bcd07e14dc13f1fa3ba8f8ef4db494c758c4b[m
+Author: Liron <liron@trellis.ai>
+Date:   Sat Apr 23 00:30:14 2022 +0300
+
+    Added props to the dependency array in data provider and gallery calc
+
+[33mcommit 3238c74eb4398fb89b61d88cf38a6790ac5af1a5[m
+Author: Liron <liron@trellis.ai>
+Date:   Sat Apr 23 00:24:55 2022 +0300
+
+    Added metrial ui theme for the typography items
+
+[33mcommit c7b1ef550403747366ff356a9c9be33f634bdfef[m
+Author: Liron <liron@trellis.ai>
+Date:   Sat Apr 23 00:23:45 2022 +0300
+
+    Added session storage to save the current data before navigation to details page + refactor responsive of back button
+
+[33mcommit 3def9f4db11261f4af7896d216990051fb79112e[m
+Author: Liron <liron@trellis.ai>
+Date:   Fri Apr 22 23:41:43 2022 +0300
+
+    Added session storage to save the current data before navigation to details page + refactor responsive of back button
+
+[33mcommit b2384594259eaa430ee1dfc27879f08aab3f94f3[m
+Author: Liron <liron@trellis.ai>
+Date:   Fri Apr 22 22:46:26 2022 +0300
+
+    Updated readme and also make the overlay to be clickable
+
+[33mcommit 157e6c57272123dedf0895e513a6ca847b87598f[m
+Author: Liron <liron@trellis.ai>
+Date:   Fri Apr 22 13:34:18 2022 +0300
+
+    improve the responsive and do more changes like add new theme and add css media
+
+[33mcommit 957ba2a535763a36cc5b7fa07370e450707c60f3[m
+Author: Liron <liron@trellis.ai>
+Date:   Fri Apr 22 12:52:15 2022 +0300
+
+    improve the responsive
+
+[33mcommit fc776bed229edd9be0f54af63d174bb2cbf5801d[m
+Author: Liron <liron@trellis.ai>
+Date:   Fri Apr 22 00:10:08 2022 +0300
+
+    Fixed the issue with gaps in the gallery
+
+[33mcommit 8a3d880ca0181f7658915b95a51188a94742dfb2[m
+Author: Liron <liron@trellis.ai>
+Date:   Thu Apr 21 23:31:44 2022 +0300
+
+    Removed data amount prop from gallery layout to the data provider
+
+[33mcommit 856308b497a2af897782cbda1380515feac8f502[m
+Author: Liron <liron@trellis.ai>
+Date:   Thu Apr 21 23:27:18 2022 +0300
+
+    few fixes, made the seach to be immediate, refactored some code
+
+[33mcommit 24cd1ddaa966a30d655a0739007cd2b5a711c271[m
+Author: Liron <liron@trellis.ai>
+Date:   Thu Apr 21 14:51:07 2022 +0300
+
+    Removed unused css selector.
+
+[33mcommit 42cf746f0ac8cd0dec9344aa68ee696ce971254c[m
+Author: Liron <liron@trellis.ai>
+Date:   Thu Apr 21 14:49:07 2022 +0300
+
+    Updated readme
+
+[33mcommit 5248bd15575af33c5febacb6a095793985c65b5d[m
+Author: Liron <liron@trellis.ai>
+Date:   Thu Apr 21 14:45:24 2022 +0300
+
+    Fixed scrollbar mixin
+
+[33mcommit ddbab6e25633e8da18dfdd69bc8bc7fb606a7126[m
+Author: Liron <liron@trellis.ai>
+Date:   Thu Apr 21 14:00:22 2022 +0300
+
+    Changed the details page, to get a large image and not the original image size.
+
+[33mcommit 75d4f5e3a4addf9282e806f9f496e9b9f6399036[m
+Author: Liron <liron@trellis.ai>
+Date:   Thu Apr 21 13:38:10 2022 +0300
+
+    Design the pages style
+
+[33mcommit 6ade3dd17fd9c22f2048abb64e30b8f8a222c981[m
+Author: Liron <liron@trellis.ai>
+Date:   Wed Apr 20 23:47:38 2022 +0300
+
+    Updated the mixins file
+
+[33mcommit 925acd7995b0d6d0eb6a9434b37be33b2faba8ef[m
+Author: Liron <liron@trellis.ai>
+Date:   Wed Apr 20 22:40:00 2022 +0300
+
+    initial commit
